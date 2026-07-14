@@ -1,0 +1,566 @@
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    background:#020617;
+    color:white;
+
+}
+
+
+
+/* NAVBAR */
+
+
+nav{
+
+    height:80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 10%;
+
+    position:sticky;
+    top:0;
+
+    background:rgba(2,6,23,0.8);
+
+    backdrop-filter:blur(10px);
+
+    z-index:100;
+
+}
+
+
+.logo{
+
+    font-size:28px;
+
+}
+
+
+.logo span{
+
+    color:#38bdf8;
+
+}
+
+
+nav ul{
+
+    display:flex;
+
+    gap:35px;
+
+    list-style:none;
+
+}
+
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+nav a:hover{
+
+    color:#38bdf8;
+
+}
+
+
+
+
+
+/* HERO */
+
+
+header{
+
+    min-height:90vh;
+
+    padding:0 10%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:50px;
+
+}
+
+
+
+.hero-text h1{
+
+    font-size:60px;
+
+}
+
+
+.hero-text h1 span{
+
+    color:#38bdf8;
+
+}
+
+
+.hero-text h3{
+
+    margin:15px 0;
+
+    font-size:30px;
+
+}
+
+
+.hero-text p{
+
+    max-width:550px;
+
+    color:#94a3b8;
+
+    font-size:18px;
+
+}
+
+
+
+
+/* BUTTONS */
+
+
+.buttons{
+
+    margin-top:30px;
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+.buttons a,
+.project-card a,
+.links a{
+
+    padding:12px 25px;
+
+    background:linear-gradient(
+        135deg,
+        #38bdf8,
+        #818cf8
+    );
+
+    color:#020617;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+.buttons a:hover,
+.project-card a:hover,
+.links a:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+
+
+/* PROFILE IMAGE */
+
+
+.profile img{
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+
+    box-shadow:
+    0 0 30px #38bdf8,
+    0 0 70px #38bdf8;
+
+}
+
+
+
+
+
+
+/* SECTIONS */
+
+
+section{
+
+    padding:90px 10%;
+
+}
+
+
+
+section h2{
+
+    font-size:40px;
+
+    margin-bottom:30px;
+
+    color:#38bdf8;
+
+}
+
+
+
+
+/* GLASS CARD */
+
+
+.card,
+.project-card{
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    border:1px solid rgba(255,255,255,0.1);
+
+}
+
+
+
+
+.card p,
+.project-card p{
+
+    color:#cbd5e1;
+
+}
+
+
+
+
+
+
+/* SKILLS */
+
+
+.skills{
+
+    display:grid;
+
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(150px,1fr)
+    );
+
+    gap:20px;
+
+}
+
+
+
+.skills div{
+
+    background:#0f172a;
+
+    padding:20px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    transition:.3s;
+
+}
+
+
+
+.skills div:hover{
+
+    transform:scale(1.08);
+
+    background:#1e293b;
+
+}
+
+
+
+
+
+
+
+/* PROJECT */
+
+
+#projects{
+
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+
+}
+
+.project-card{
+
+    max-width:700px;
+
+}
+
+
+
+.project-card h3{
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.project-card a{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+}
+
+
+
+
+
+
+/* CONTACT */
+
+
+.links{
+
+    margin-top:30px;
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:800px){
+
+
+    nav ul{
+
+        display:none;
+
+    }
+
+
+    header{
+
+        flex-direction:column-reverse;
+
+        text-align:center;
+
+        padding-top:50px;
+
+    }
+
+
+    .hero-text h1{
+
+        font-size:42px;
+
+    }
+
+
+    .profile img{
+
+        width:220px;
+
+        height:220px;
+
+    }
+
+
+    .buttons,
+    .links{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+
+}
+
+section,
+.project-card,
+.skills div{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:0.8s ease;
+
+}
+
+
+section.active,
+.project-card.active,
+.skills div.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* CONTACT FORM */
+
+
+#contact form{
+
+    margin-top:30px;
+
+    max-width:550px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+
+#contact input,
+#contact textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    background:#0f172a;
+
+    border:2px solid #38bdf8;
+
+    border-radius:15px;
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+
+
+#contact textarea{
+
+    height:150px;
+
+    resize:none;
+
+}
+
+
+
+#contact input::placeholder,
+#contact textarea::placeholder{
+
+    color:#94a3b8;
+
+}
+
+
+
+
+#contact button{
+
+    width:180px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        #38bdf8,
+        #818cf8
+    );
+
+    color:#020617;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+
+#contact button:hover{
+
+    transform:scale(1.08);
+
+}
