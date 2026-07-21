@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<body>
+
+
+<h1>
+
+Admin Dashboard 🚀
+
+</h1>
+
+
+
+<a href="/logout">
+
+Logout
+
+</a>
+
+
+
+{% for msg in messages %}
+
+
+<hr>
+
+
+<h3>
+
+{{msg[1]}}
+
+</h3>
+
+
+<p>
+
+Email: {{msg[2]}}
+
+</p>
+
+
+
+<p>
+
+Message: {{msg[3]}}
+
+</p>
+
+
+
+{% endfor %}
+
+
+
+</body>
+
+
+</html>
